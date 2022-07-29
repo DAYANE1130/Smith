@@ -1,5 +1,5 @@
 import ProductsModels from '../models/productsModels'; 
-import Products from '../interfaces/productInterface';
+import Iproducts from '../interfaces/productInterface';
 import connection from '../models/connection';
 
 export default class ProductsServices {
@@ -9,7 +9,7 @@ export default class ProductsServices {
     this.models = new ProductsModels(connection);
   }
 
-  public async getAll(): Promise<Products[]> {
+  public async getAll(): Promise<Iproducts[]> {
     const products = await this.models.getAll();
     return products;
   }

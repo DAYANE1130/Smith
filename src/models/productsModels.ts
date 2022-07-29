@@ -1,5 +1,5 @@
 import { Pool } from 'mysql2/promise';
-import Products from '../interfaces/productInterface';
+import Iproducts from '../interfaces/productInterface';
 
 export default class ProductsModels {
   public connection: Pool;
@@ -8,9 +8,9 @@ export default class ProductsModels {
     this.connection = connection;
   }
   
-  public async getAll(): Promise<Products[]> {
+  public async getAll(): Promise<Iproducts[]> {
     const query = 'SELECT * FROM Trybesmith.Products;';
     const [products] = await this.connection.execute(query);
-    return products as Products[];
+    return products as Iproducts[];
   }
 }

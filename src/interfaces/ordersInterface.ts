@@ -1,9 +1,10 @@
-interface Products {
-  id: number;
+interface Products{
+  id:number[]
 }
-
-export default interface Orders {
+interface Orders {
   id:number,
   userId:number,
   productsIds: Products
 }
+
+export default Orders;
