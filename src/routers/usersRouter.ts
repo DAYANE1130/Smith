@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import UsersControllers from '../controllers/ordersControllers';
+// import UsersControllers from '../controllers/ordersControllers';
 
 const ordersRouter = Router();
-const usersControllers = new UsersControllers();
+// const usersControllers = new UsersControllers();
 
-ordersRouter.get('/', usersControllers);
+ordersRouter.get('/');
 
 export default ordersRouter; 
