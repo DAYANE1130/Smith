@@ -11,8 +11,4 @@ const jwtService = {
   },
 };
 
-// const options: SignOptions = { algorithm: 'HS256', expiresIn: '30d' };
-// const token = jwt.sign({ username: 'day' }, 'my-secret', options);
-// console.log(token);
-
 export default jwtService;
