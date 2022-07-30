@@ -9,7 +9,7 @@ export default class ProductsModels {
     this.connection = connection;
   }
 
-  public async create(user: Iusers) {
+  public async create(user: Iusers):Promise<{ token:string }> {
     const { username, classe, level, password } = user;
     const query = 'INSERT INTO Trybesmith.Users(username, classe, level, password)VALUES(?,?,?,?);';
     const test = await this.connection.execute<ResultSetHeader>(query, [
