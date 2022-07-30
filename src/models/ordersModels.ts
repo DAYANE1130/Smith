@@ -7,7 +7,7 @@ export default class OrdersModels {
   constructor(connection:Pool) {
     this.connection = connection;
   }
-  
+
   public async getAll(): Promise<Iorders[]> {
     const query = 'SELECT orders.id, orders.userId, JSON_ARRAYAGG(products.id) as productsIds'
     + ' FROM Trybesmith.Orders as orders'
