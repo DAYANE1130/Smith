@@ -10,5 +10,4 @@ const jwtService = {
     return token;
   },
 };
-
 export default jwtService;

@@ -1,5 +1,5 @@
 import UsersModels from '../models/usersModels'; 
-import Iusers from '../interfaces/usersInterface';
+import { Iusers } from '../interfaces/usersInterface';
 import connection from '../models/connection';
 import jwtService from './jwtService';
 

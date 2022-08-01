@@ -1,5 +1,6 @@
 import { Pool, ResultSetHeader } from 'mysql2/promise';
-import Iusers from '../interfaces/usersInterface';
+import Ilogin from '../interfaces/loginInterface';
+import { Iusers } from '../interfaces/usersInterface';
 
 export default class ProductsModels {
   public connection: Pool;
@@ -18,5 +19,12 @@ export default class ProductsModels {
       password,
     ]); // retorna resultSETHeader
     return { id: insertId, username, classe, level, password };
+  }
+
+  public async getAll(): Promise<Ilogin[]> {
+    const query = 'SELECT * FROM Trybesmith.Users;';
+    const [users] = await this.connection.execute(query);
+    console.log(users);
+    return users as Ilogin[];
   }
 }

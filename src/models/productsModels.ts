@@ -11,6 +11,7 @@ export default class ProductsModels {
   public async getAll(): Promise<Iproducts[]> {
     const query = 'SELECT * FROM Trybesmith.Products;';
     const [products] = await this.connection.execute(query);
+    console.log(products);
     return products as Iproducts[];
   }
 
