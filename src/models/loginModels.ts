@@ -9,13 +9,8 @@ export default class Login {
   }
 
   public async makeLogin(username:string, password:string):Promise<Ilogin[]> {
-    const queryUsername = 'SELECT * FROM Trybesmith.Users WHERE username=?;';
-    const queryPassword = 'SELECT * FROM Trybesmith.Users WHERE password=?;';
-
-    const [findusername] = await this.connection.execute(queryUsername, [username]);
-    const [findpassword] = await this.connection.execute(queryPassword, [password]);
-    // const {ResultSetHeader} = findusername;
-
-    return findusername && findpassword as Ilogin[];
+    const queryUsername = 'SELECT * FROM Trybesmith.Users;';
+    const [findusername] = await this.connection.execute(queryUsername, [username, password]);
+    return findusername as Ilogin[];
   }
 }
