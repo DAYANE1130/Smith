@@ -1,8 +1,5 @@
 import { Pool } from 'mysql2/promise';
 import Ilogin from '../interfaces/loginInterface';
-// import Ilogin from '../interfaces/loginInterface';
-// import Ilogin from '../interfaces/loginInterface';
-// import { IuserLogin } from '../interfaces/usersInterface';
 
 export default class Login {
   public connection:Pool;
@@ -10,16 +7,6 @@ export default class Login {
   constructor(connection:Pool) {
     this.connection = connection;
   }
-
-  // public async create(username:string, password:string) {
-  //   // const { username, password } = login;
-  //   const query = 'INSERT INTO Trybesmith.Users(username,password)VALUES(?,?);';
-  //   const [{ insertId }] = await this.connection.execute<ResultSetHeader>(query, [
-  //     username, password,
-  //   ]); // retorna resultSETHeader
-
-  //   return { id: insertId, username, password }; // cria uma 
-  // }
 
   public async makeLogin(username:string, password:string):Promise<Ilogin[]> {
     const queryUsername = 'SELECT * FROM Trybesmith.Users WHERE username=?;';
@@ -32,9 +19,3 @@ export default class Login {
     return findusername && findpassword as Ilogin[];
   }
 }
-// public async getById(id: number): Promise<InterfaceRestaurants> {
-//   const query = 'SELECT * FROM TypeScriptExpress.Restaurants WHERE id=?;';
-//   const [result] = await this.connection.execute(query, [id]);
-//   const [restaurant] = result as InterfaceRestaurants[]; // tirando o primeiro de todo o array ? é isso?
-//   return restaurant;
-// }
