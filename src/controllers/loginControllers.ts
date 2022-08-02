@@ -10,7 +10,7 @@ export default class LoginControllers {
 
   public create = async (req:Request, res:Response) => {
     const { username, password } = req.body;
-    const user = await this.service.create(username, password);
+    const user = await this.service.makeLogin(username, password);
     if (user === false || user === true) {
       return res.status(401).json({ message: 'Username or password invalid' });
     }
