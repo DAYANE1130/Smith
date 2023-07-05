@@ -1,7 +1,7 @@
 # Projeto Smith (Casa de ferreiro) 
 A aplicação consiste em uma loja de itens medievais, no formato de uma API, utilizando Typescript.
 
-- A arquitetura foi organizada no formato de camadas(Models, Service e Controllers) 
+-  Meu código está na pasta "src" . A arquitetura foi organizada no formato de camadas(Models, Service e Controllers) 
 - É possível realizar as operações básicas que se pode fazer em um  banco de dados: Criação, Leitura, Atualização e Exclusão (ou CRUD, para as pessoas mais íntimas stuck_out_tongue_winking_eye - Create, Read, Update e Delete). API obedece o padrão REST
 - Possui  endpoints que irão ler e escrever em um banco de dados, utilizando o MySQL.
 
